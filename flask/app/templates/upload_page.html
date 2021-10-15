@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <link rel = "stylesheet" href = "{{ url_for('static',  filename = 'css/upload.css') }}">
+   <script src="{{url_for('static', filename = 'javascript/upload_j.js') }}"></script>
+   </head>
+   <body>
+      <div class = 'page-header'>
+      <h2>내 회복실</h2>
+        <hr/>
+        <br/>
+      </div>
+    
+      <form method = "POST" 
+         enctype = "multipart/form-data">
+         
+         <div class="filebox preview-image"> 
+            <input class="upload-name" value="파일선택" disabled="disabled" style = 'width: 200px;' > 
+
+            <label for="input_file">업로드</label> 
+            <input type="file" name = 'file' id="input_file" class="upload-hidden"> 
+            </br>
+            </br>
+            <div class = "preview_image" id = "image_container" style = "padding: 20px" >
+               <input type = "file" name = "file" value = "file" id= "ex_file" accept = "ex_file/*" onchange= "setThumbnail(event);" />
+               <img src = "{{ url_for('static', filename = img_name) }}"id="img_preview" style="display:none;"/>
+            </div>
+            
+         </div>
+         </br>
+         
+
+
+         </br>
+
+         <input type = "submit" value = Upload id = 'upload_button' >
+      
+
+         </br>
+         </br>
+
+         
+
+
+      </form>
+   </body>
+
+
+
+</html>
